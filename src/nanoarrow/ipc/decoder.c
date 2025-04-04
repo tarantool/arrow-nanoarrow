@@ -200,8 +200,8 @@ static void ArrowIpcSharedBufferClone(struct ArrowIpcSharedBuffer* shared,
                                       struct ArrowBuffer* shared_out) {
   if (shared->private_src.data == NULL) {
     ArrowBufferInit(shared_out);
-    shared_out->size_bytes = shared_out->size_bytes;
-    shared_out->capacity_bytes = shared_out->capacity_bytes;
+    shared_out->size_bytes = shared->private_src.size_bytes;
+    shared_out->capacity_bytes = shared->private_src.capacity_bytes;
     return;
   }
 
